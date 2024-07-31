@@ -1,4 +1,4 @@
-import Prelude hiding ((<*>))
+import Prelude hiding (fmap, Functor, (<*>))
 -- CLASE 1
 
 numeros = [1..100]
@@ -95,3 +95,18 @@ Este último, al hacer pListAB "AB" -> [([('A','B')],""),([],"AB")]
                       pListAB "ABAB" -> [([('A','B'),('A','B')],""),([('A','B')],"AB"),([],"ABAB")]
 Preguntar si está bien (creo que no)
 -}
+
+class Functor (f :: * -> *) where
+  fmap :: (a -> b) -> f a -> f b
+
+instance Functor [] where
+  fmap = map
+
+instance Functor Maybe where
+  fmap f Nothing = Nothing
+  fmap f (Just a) = Just (f a)
+
+divM x y | y /= 0 = Just(x `div` y)
+         | otherwise = Nothing
+
+divMp2 x y = fmap(+2) (divM x y)
