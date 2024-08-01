@@ -23,13 +23,13 @@ Si queremos hacer de un constructor de tipo una instancia de Functor, tiene que 
 	**Aplicación de `divE`y `divM`:**
 	
 	`divM :: Int -> Int -> Maybe Int
-	`divM x y | y /= 0    = Just (x `div` y)
-	     `   | otherwise = Nothing
+	`divM x y | y /= 0    = Just (x `div` y)`
+	     `   | otherwise = Nothing`
 	     
-	`divE :: Maybe Int -> Maybe Int -> Maybe Int
-	`divE x y = case (x, y) of
-				`(Just vx, Just vy) -> divM vx vy
-							     `_ -> Nothing
+	`divE :: Maybe Int -> Maybe Int -> Maybe Int`
+	`divE x y = case (x, y) of`
+				`(Just vx, Just vy) -> divM vx vy`
+							     `_ -> Nothing`
 	
 	`divE (Just 10) (Just 2) -- Just 5`
 	`divE (Just 10) (Just 0) -- Nothing`
