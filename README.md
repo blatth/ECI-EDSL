@@ -14,4 +14,4 @@
 | 4 | [...](https://github.com/blatth/ECI-EDSL/blob/main/Clases/Clase4.pdf)                                        |
 | 5 | [...](https://github.com/blatth/ECI-EDSL/blob/main/Clases/Clase5.pdf)                                        |
 
-[Mis anotaciones](https://github.com/blatth/ECI-EDSL/blob/main/Anotaciones.md))
+[Mis anotaciones](https://github.com/blatth/ECI-EDSL/blob/main/Anotaciones.md)
