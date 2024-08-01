@@ -73,7 +73,7 @@ p <|> q = \cs -> p cs ++ q cs
 (<**>) :: Parser s (a -> b) -> Parser s a -> Parser s b
 (p <**> q) cs = [(f a, cs'') | (f, cs') <- p cs, (a, cs'') <- q cs']  
 
--- Parsers: ejemplos
+-- Parsers: aplicaciones
 
 -- Cuando detecta un 'A' al principio, lo cambia por un B
 pA2B = pSucceed (\_ -> 'B') <**> pSym 'A'
@@ -96,6 +96,8 @@ Este último, al hacer pListAB "AB" -> [([('A','B')],""),([],"AB")]
 Preguntar si está bien (creo que no)
 -}
 
+-- FUNCTORES
+
 class Functor (f :: * -> *) where
   fmap :: (a -> b) -> f a -> f b
 
@@ -106,7 +108,32 @@ instance Functor Maybe where
   fmap f Nothing = Nothing
   fmap f (Just a) = Just (f a)
 
+instance Functor (Either a) where
+  fmap f (Right x) = Right (f x)
+  fmap f (Left x) = Left x
+
+{-
+instance Functor ((->) r) where
+  fmap f h = \r -> f (h r)
+-}
+
+instance Functor ((->) r) where
+  fmap f h r = f (h r)
+
+-- Functores: aplicaciones
+
 divM x y | y /= 0 = Just(x `div` y)
          | otherwise = Nothing
 
 divMp2 x y = fmap(+2) (divM x y)
+
+
+-- Functores APLICATIVOS
+
+class Functor f => Applicative f where
+  pure :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
+
+-- Sinónimo en Applictive:
+
+(<$>) :: Functor f => (a -> b) -> f a -> f b
