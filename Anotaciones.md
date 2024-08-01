@@ -38,6 +38,16 @@ Si queremos hacer de un constructor de tipo una instancia de Functor, tiene que 
 	
 	`divE` utiliza `divM`  para hacer divisiones **seguras**. Si ambos valores son Just, devuelve un Just llamando a divM. Si cualquiera de los dos valores es un Nothing, devuelve Nothing
 
+## Mónadas
+Los mónadas son un subconjunto de los functores aplicativos.
+En mónadas se ejecutan solamente aquellas computaciones que son _válidas_ (a diferencia de Applicative que ejecuta _todas_ las computaciones)
 
+`sumnd :: Num a => [a] -> [a] -> [a]`
+`sumnd xs ys do` x <- xs
+				`y <- ys`
+				 `return (x + y)`
 
+Agarro cada `x `en `xs` y por cada uno que agarro, agarro un `y` en `ys`. Por cada uno, sumo `x+y` y lo pongo en una lista como elemento único. Se van generando listas para cada suma y las concateno todas en una sola. Al final, me devuelve una lista de sumas de cada valor de x con cada uno de y.
 
+**Do notation** me ahorra de escribir lambdas y con ellos genero secuencias (tiene una noción un poco imperativa). Toda línea _dentro de un do_ es un valor monádico.
+[Explicación más clara, con ejemplos](https://learnyouahaskell.com/a-fistful-of-monads#do-notation)
