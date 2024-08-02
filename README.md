@@ -5,7 +5,6 @@
 - [learnyouakashell](https://learnyouahaskell.com/chapters)
 - [Functors, Applicatives, And Monads In Pictures](https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Three Useful Monads](https://www.adit.io/posts/2013-06-10-three-useful-monads.html)
-- [Mis anotaciones](https://github.com/blatth/ECI-EDSL/blob/main/Anotaciones.md)
   
 ## Clases
 
