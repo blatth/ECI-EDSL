@@ -1,4 +1,4 @@
-# Abordaje Funcional a EDSLs - ECI2024_N1 
+# Abordaje Funcional a EDSLs - ECI2024N1 
 
 ## Recursos
 
