@@ -2,7 +2,7 @@
 
 ## Recursos
 
-- [learnyouakashell](https://learnyouahaskell.com/chapters)
+- [learnyouakashell](https://learnyouahaskell.github.io/chapters.html)
 - [Functors, Applicatives, And Monads In Pictures](https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Three Useful Monads](https://www.adit.io/posts/2013-06-10-three-useful-monads.html)
 - Explanation of Generalized Algebraic Data Types | [Video](https://vimeo.com/12208838) | [Texto](https://en.wikibooks.org/wiki/Haskell/GADT#Understanding_GADTs)
